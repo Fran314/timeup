@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>TimeUp</title>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="content">
+            <h1>TimeUp</h1>
+            <div class="card">
+                <div class="table">
+                    {{#each endpoints}}
+                    <div class="row">{{this.name}}</div>
+                    {{/each}}
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                laoreet tortor eget purus iaculis, aliquam finibus ipsum
+                condimentum. Quisque efficitur sem elit, vitae viverra mauris
+                pharetra id. Aliquam aliquam molestie gravida.
+            </div>
+        </div>
+    </body>
+</html>
