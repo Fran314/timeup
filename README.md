@@ -19,7 +19,8 @@ without exposing it.
 
 ## Usage
 
-> [!WARNING] This is a work in progress, and will not actually work as
+> [!WARNING]
+> This is a work in progress, and will not actually work as
 > advertised. This paragraph is about how it will work when ready
 
 TimeUp is composed of two parts: a server, which is meant to be publicly
