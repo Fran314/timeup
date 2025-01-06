@@ -9,7 +9,6 @@
     <body>
         <div class="content">
             <h1>TimeUp</h1>
-            <!-- <div class="card"> -->
             {{#each endpoints}}
             <div class="table">
                 <div class="header">
@@ -19,19 +18,12 @@
                     </div>
                 </div>
                 <div class="outages">
-                    Last outages: {{#each this.outages}}
+                    Previous outages: {{#each this.outages}}
                     <div class="outage {{this.type}}">{{this.text}}</div>
                     {{/each}}
                 </div>
             </div>
             {{/each}}
-            <!-- <p> -->
-            <!--     Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
-            <!--     Integer laoreet tortor eget purus iaculis, aliquam finibus -->
-            <!--     ipsum condimentum. Quisque efficitur sem elit, vitae viverra -->
-            <!--     mauris pharetra id. Aliquam aliquam molestie gravida. -->
-            <!-- </p> -->
-            <!-- </div> -->
         </div>
     </body>
 </html>
