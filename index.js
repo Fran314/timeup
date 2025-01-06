@@ -1,6 +1,6 @@
 import express from 'express'
 import State from './state.js'
-import { INDEX, PUBLIC } from './frontend.js'
+import frontend from './frontend.js'
 
 const PORT = 3000
 const ENDPOINTS = ['umbreon', 'aaa']
@@ -11,8 +11,7 @@ const state = new State(ENDPOINTS)
 
 app.post('/api/:endpoint', (req, res) => {})
 
-app.use('/', express.static(PUBLIC))
-app.get('/*', (req, res) => res.send(INDEX(state.view)))
+app.use('/', frontend(state))
 
 app.listen(PORT, () => {
     console.log(`Listening at http://localhost:${PORT}`)

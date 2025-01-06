@@ -2,23 +2,36 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>TimeUp</title>
         <link href="style.css" rel="stylesheet" />
     </head>
     <body>
         <div class="content">
             <h1>TimeUp</h1>
-            <div class="card">
-                <div class="table">
-                    {{#each endpoints}}
-                    <div class="row">{{this.name}}</div>
+            <!-- <div class="card"> -->
+            {{#each endpoints}}
+            <div class="table">
+                <div class="header">
+                    <div class="name {{this.state}}">{{this.name}}</div>
+                    <div class="state {{this.state}}">
+                        {{this.verboseState}}
+                    </div>
+                </div>
+                <div class="outages">
+                    Last outages: {{#each this.outages}}
+                    <div class="outage {{this.type}}">{{this.text}}</div>
                     {{/each}}
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                laoreet tortor eget purus iaculis, aliquam finibus ipsum
-                condimentum. Quisque efficitur sem elit, vitae viverra mauris
-                pharetra id. Aliquam aliquam molestie gravida.
             </div>
+            {{/each}}
+            <!-- <p> -->
+            <!--     Lorem ipsum dolor sit amet, consectetur adipiscing elit. -->
+            <!--     Integer laoreet tortor eget purus iaculis, aliquam finibus -->
+            <!--     ipsum condimentum. Quisque efficitur sem elit, vitae viverra -->
+            <!--     mauris pharetra id. Aliquam aliquam molestie gravida. -->
+            <!-- </p> -->
+            <!-- </div> -->
         </div>
     </body>
 </html>
