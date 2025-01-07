@@ -1,6 +1,12 @@
 const CHECK_FREQUENCY = 1000 * 60 * 2 // 2 minutes
 // const CHECK_FREQUENCY = 1000 * 5 // 5 seconds
 
+const Status = {
+    Up: 'Up',
+    Down: 'Down',
+    Unknown: 'Unknown',
+}
+
 const typeCalculator = date => {
     const WEEK_LENGTH = 1000 * 60 * 60 * 24 * 7
 
