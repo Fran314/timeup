@@ -1,3 +1,5 @@
+import { info } from './utils.js'
+
 const Status = {
     Up: 'Up',
     Down: 'Down',
@@ -63,6 +65,8 @@ export default class State {
     }
 
     tick() {
+        info('tick')
+
         const now = new Date()
 
         for (const endpoint in this.endpoints) {
