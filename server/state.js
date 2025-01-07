@@ -1,6 +1,3 @@
-const CHECK_FREQUENCY = 1000 * 60 * 2 // 2 minutes
-// const CHECK_FREQUENCY = 1000 * 5 // 5 seconds
-
 const Status = {
     Up: 'Up',
     Down: 'Down',
@@ -35,12 +32,15 @@ const formatDate = date => {
 
 export default class State {
     #endpoints
+    #frequency
 
-    constructor(endpoints) {
+    constructor(config) {
         const NOW = new Date()
 
+        this.frequency = config.frequency * 1000
+
         this.endpoints = {}
-        for (const endpoint in endpoints) {
+        for (const endpoint in config.endpoints) {
             this.endpoints[endpoint] = {
                 name: endpoint,
                 lastState: false,
@@ -50,7 +50,7 @@ export default class State {
             }
         }
 
-        setInterval(this.tick.bind(this), CHECK_FREQUENCY)
+        setInterval(this.tick.bind(this), this.frequency)
     }
 
     ping(endpoint) {
@@ -67,7 +67,7 @@ export default class State {
 
         for (const endpoint in this.endpoints) {
             const elapsedSinceLastPing = now - this.endpoints[endpoint].ping
-            const isUp = elapsedSinceLastPing < CHECK_FREQUENCY
+            const isUp = elapsedSinceLastPing < this.frequency
             if (isUp && !this.endpoints[endpoint].lastState) {
                 this.endpoints[endpoint].outages.unshift({
                     from: this.endpoints[endpoint].downSince,

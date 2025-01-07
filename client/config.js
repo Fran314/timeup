@@ -7,14 +7,6 @@ const CONFIG_PATH = process.env.__DEV__
     : '/config.yml'
 const config = parse(fs.readFileSync(CONFIG_PATH, 'utf8'))
 
-config.port = config.port || 5104
-
-config.frequency = config.frequency || 60
-
-config.endpoints = config.endpoints || {}
-for (const endpoint in config.endpoints) {
-    config.endpoints[endpoint].pw_hash =
-        config.endpoints[endpoint].pw_hash.toLowerCase()
-}
+config.frequency = config.frequency || 30
 
 export default config

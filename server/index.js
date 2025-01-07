@@ -5,7 +5,7 @@ import ssr from './ssr.js'
 import api from './api.js'
 
 const app = express()
-const state = new State(config.endpoints)
+const state = new State(config)
 
 app.use('/api', api(state))
 app.use('/', ssr(state))

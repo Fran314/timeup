@@ -1,4 +1,5 @@
 port: 5104
+frequency: 60
 endpoints:
     umbreon:
         pw_hash: 6f9880daeb1471a098e140da37b8d24528a77a6462f2a3b4c40b5a0595ecd830
