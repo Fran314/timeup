@@ -34,7 +34,7 @@ export default class State {
         const NOW = new Date()
 
         this.endpoints = {}
-        for (const endpoint of endpoints) {
+        for (const endpoint in endpoints) {
             this.endpoints[endpoint] = {
                 name: endpoint,
                 lastState: false,

@@ -1,0 +1,6 @@
+port: 5104
+endpoints:
+    umbreon:
+        pw_hash: 6f9880daeb1471a098e140da37b8d24528a77a6462f2a3b4c40b5a0595ecd830
+    altaria:
+        pw_hash: f8d02b219853a788c8aa2676d8da5e26da36648f087cca688b2168ac991e08fe

@@ -5,18 +5,23 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
+        "serve": "node index.js",
         "dev": "nodemon index.js"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "express": "^4.21.2",
-        "handlebars": "^4.7.8"
+        "handlebars": "^4.7.8",
+        "yaml": "^2.7.0"
     },
     "devDependencies": {
         "nodemon": "^3.1.9"
     },
     "nodemonConfig": {
-        "ext": "*.js,*.html"
+        "ext": "*.js,*.html,*.yml",
+        "env": {
+            "__DEV__": "true"
+        }
     }
 }
